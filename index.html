@@ -11,10 +11,11 @@
 <main class="game-container">
     <header>
         <h1>Salah's Simon Says:</h1>
+        <!-- player promts will appear here -->
         <span class="playerInstructions hidden"></span>
     </header>
 
-    <section class="tile-container">
+    <section class="button-container">
         <button class="game-button button-green" data-color="green">Green</button>
         <button class="game-button button-blue" data-color="blue">Blue</button>
         <button class="game-button button-yellow" data-color="yellow">Yellow</button>
@@ -24,7 +25,13 @@
         <button class="start-button">START</button>
     </footer>
 </main>
-
+<div class="hidden">
+    <!-- game sounds labeled by color -->
+    <audio src="http://www.therapboard.com/audio/2chainz_unh3.ogg" data-sound="green"></audio>
+    <audio src="http://www.therapboard.com/audio/chance_aghh2.ogg" data-sound="blue"></audio>
+    <audio src="http://www.therapboard.com/audio/dmx6.ogg" data-sound="yellow"></audio>
+    <audio src="http://www.therapboard.com/audio/gucci_14.ogg" data-sound="red"></audio>
+</div>
 
 <script src="script.js"></script>
 </body>

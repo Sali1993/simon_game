@@ -8,15 +8,28 @@ let level = 0;
 
 
 //Functions
+
+function activeColor(color){
+    const currentColor = document.querySelector(`[data-color="${color}"]`)
+    const sound = document.querySelector(`[data-sound="${color}"]`)
+    currentColor.classList.add("activated");
+    sound.play();
+    setTimeout(()=>{
+        currentColor.classList.remove("activated")
+    },300);//activates and plays sound the button for 3 seconds
+
+
+}
+
 function nextRound(){
     level +=1
     const newSequence =[...compSequence]//copies computer sequence and stores it in order to add to it
+    newSequence.push(nextStep()) //adds random value to existing comuter sequence
 }
 
 function nextStep() {
     const colors = ['red', 'green', 'blue', 'yellow'];
     const random = colors[Math.floor(Math.random() * tiles.length)];
-
     return random;
 }
 
