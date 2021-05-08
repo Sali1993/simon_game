@@ -37,8 +37,12 @@ function gamePlay(color){
     const index = playerSequence.push(color)-1;
     const sound = document.querySelector(`[data-sound="${color}"]`);
     sound.play();
-    const remainingTaps = sequence.length - playerSequence.length;
-    if(playerSequence.length===sequence.length){
+    const clicks = compSequence.length - playerSequence.length;
+    if(playerSequence[index] !== compSequence[index]){
+        reset("Dang! Almost had it!");
+        return
+    }
+    if(playerSequence.length===compSequence.length){
         playerSequence = [];
         playerInstructions.innerText="Dope! Time to step it up!";
         setTimeout(()=>{
@@ -46,25 +50,25 @@ function gamePlay(color){
         },1000);
         return
     }
-    playerInstructions = `Your Go! ${remainingTaps} click${remainingTaps>1?"s":""}`
+    playerInstructions = `Your Go! ${clicks} click${clicks>1?"s":""}`
 }
 
 function nextRound() {
     level += 1;
-    gameBoard.classList.add("unclickable");
+    gameBoard.classList.add("disabled");
     playerInstructions.innerText = "Wait for computer";
     levelTally.innerText = `Level ${level} of 25`;
     const newSequence = [...compSequence];//copies computer sequence and stores it in order to add to it
     newSequence.push(randomizer()); //adds random value to existing comuter sequence
     play(newSequence);
-    sequence = [...newSequence];
+    compSequence = [...newSequence];
     setTimeout(() => {
         yourTurn(level);
     }, level * 500 + 1000);//delay to start your turn after the computer squence ends
 }
 
 function yourTurn(level) {
-    gameBoard.classList.remove("unclickable")//activates buttons
+    gameBoard.classList.remove("disabled")//activates buttons
     playerInstructions.innerText = `Your go! ${level} click${level > 1 ? 's' : ''}`//changes player prompt, adds "s" after level 1
 }
 
@@ -84,5 +88,16 @@ function activeColor(color) {
     setTimeout(() => {
         currentColor.classList.remove("activated")
     }, 300);//activates and plays sound the button for 3 seconds
+}
+
+function reset(text){
+    alert(text);
+    compSequence =[];
+    playerSequence =[];
+    level=0;
+    startButton.classList.remove("hidden")
+    playerInstructions.classList.add("hidden")
+    levelTally.classList.add("hidden")
+    gameBoard.classList.add("disabled")
 }
 

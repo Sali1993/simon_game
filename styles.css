@@ -19,6 +19,6 @@
     display: none;
 }
 
-.unclickable {
+.disabled {
   pointer-events: none;
 }
