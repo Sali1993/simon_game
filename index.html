@@ -12,10 +12,12 @@
     <header>
         <h1>Salah's Simon Says:</h1>
         <!-- player promts will appear here -->
-        <span class="playerInstructions hidden"></span>
+        <div class="prompts">
+            <span class="playerInstructions hidden"></span>
+        </div>
     </header>
 
-    <section class="button-container">
+    <section class="button-container unclickable">
         <button class="game-button button-green" data-color="green">Green</button>
         <button class="game-button button-blue" data-color="blue">Blue</button>
         <button class="game-button button-yellow" data-color="yellow">Yellow</button>
@@ -23,6 +25,9 @@
     </section>
     <footer>
         <button class="start-button">START</button>
+        <div class="prompts">
+            <span class="level-tally hidden"></span>
+        </div>
     </footer>
 </main>
 <div class="hidden">
