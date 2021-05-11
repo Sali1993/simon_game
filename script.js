@@ -34,7 +34,7 @@ function randomizer() {
 }
 
 function gamePlay(color){
-    const index = playerSequence.push(color)-1;
+    const index = playerSequence.push(color)-1;//player clicks
     const sound = document.querySelector(`[data-sound="${color}"]`);
     sound.play();
     const clicks = compSequence.length - playerSequence.length;
@@ -42,7 +42,11 @@ function gamePlay(color){
         reset("Dang! Almost had it!");
         return
     }
+   
     if(playerSequence.length===compSequence.length){
+        if(playerSequence===25){
+            reset("YOU GOT IT DONE! Thats whats up!" )
+        }
         playerSequence = [];
         playerInstructions.innerText="Dope! Time to step it up!";
         setTimeout(()=>{
@@ -50,7 +54,7 @@ function gamePlay(color){
         },1000);
         return
     }
-    playerInstructions = `Your Go! ${clicks} click${clicks>1?"s":""}`
+    playerInstructions.innerText = `Your Go! ${clicks} click${clicks>1?"s":""}`
 }
 
 function nextRound() {
