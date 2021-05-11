@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 670px)" href="smallscreen.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salah's Simon Says</title>
 </head>
@@ -13,24 +14,38 @@
         <h1>Salah's Simon Says:</h1>
         <!-- player promts will appear here -->
         <div class="prompts">
-            <span class="playerInstructions hidden"></span>
+            <span class="playerInstructions">
+            </span>
+            <div class="optionButtons">
+                <p class="optionsPrompt">Pick your MC! (max 4)</p>
+                <button class="pickChainz">2 chainz</button>
+                <button class="pickChance">Chance The Rapper</button>
+                <button class="pickDmx">DMX</button>
+                <button class="pickGucci">Gucci Mane</button>
+                <button class="pickDrake">Drake</button>
+                <button class="pickJon">Lil Jon</button>
+                <button class="pickNicki">Nicki Minaj</button>
+                <button class="pickBiggie">Biggie Smalls</button>
+                <button class="pickRoss">Rick Ross</button>
+                <button class="pickSoulja">Soulja Boy</button>
+            </div>
         </div>
     </header>
 
-    <section class="button-container disabled">
-        <button class="game-button chainz " data-color="green"></button>
-        <button class="game-button chance " data-color="blue"></button>
-        <button class="game-button dmx " data-color="yellow"></button>
-        <button class="game-button gucci " data-color="red"></button>
-        <button class="game-button drake " data-color="pink"></button>
-        <button class="game-button jon " data-color="violet"></button>
-        <button class="game-button nicki " data-color="grey"></button>
-        <button class="game-button biggie " data-color="gold"></button>
-        <button class="game-button ross " data-color="orange"></button>
-        <button class="game-button soulja " data-color="black"></button>
+    <section class="button-container  ">
+        <button class="game-button chainz hidden " data-color="green"></button>
+        <button class="game-button chance hidden " data-color="blue"></button>
+        <button class="game-button dmx hidden " data-color="yellow"></button>
+        <button class="game-button gucci hidden " data-color="red"></button>
+        <button class="game-button drake hidden " data-color="pink"></button>
+        <button class="game-button jon hidden " data-color="violet"></button>
+        <button class="game-button nicki hidden " data-color="grey"></button>
+        <button class="game-button biggie hidden " data-color="gold"></button>
+        <button class="game-button ross hidden " data-color="orange"></button>
+        <button class="game-button soulja hidden " data-color="black"></button>
     </section>
     <footer>
-        <button class="start-button">START</button>
+        <button class="start-button hidden">START</button>
         <div class="bottomPrompts">
             <span class="level-tally hidden"></span>
         </div>
