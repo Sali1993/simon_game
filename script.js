@@ -24,7 +24,7 @@ var startButton = document.querySelector(".start-button");
 var playerInstructions = document.querySelector(".playerInstructions");
 var levelTally = document.querySelector(".level-tally")
 var gameBoard = document.querySelector(".button-container");
-var colors = [];
+let colors = [];
 let compSequence =[];
 let playerSequence =[];
 let pickedEmcees =[]
@@ -213,10 +213,10 @@ function play(newSequence) {
 function activeColor(color) {
     const currentColor = document.querySelector(`[data-color="${color}]"`)
     const sound = document.querySelector(`[data-sound="${color}"]`)
-    currentColor.classList.add("activated");
+    currentColor.classList.add("active");
     sound.play();//.play plays sound
     setTimeout(() => {
-        currentColor.classList.remove("activated")
+        currentColor.classList.remove("active")
     }, 300);//activates and plays sound the button for 3 seconds
 }
 
@@ -235,3 +235,4 @@ function reset(text){
     // gameBoard.classList.add("hidden")
    
 }
+

@@ -5,29 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" media="screen and (max-width: 670px)" href="smallscreen.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salah's Simon Says</title>
 </head>
 <body>
 <main class="game-container">
-    <header>
-        <h1>Salah's Simon Says:</h1>
+    <header class="textBox">
+        <h1 class="title-text">Salah's Simon Says:</h1>
         <!-- player promts will appear here -->
         <div class="prompts">
-            <span class="playerInstructions">
+            <span class="playerInstructions text">
             </span>
             <div class="optionButtons">
-                <p class="optionsPrompt">Pick your MC! (max 4)</p>
-                <button class="pickChainz">2 chainz</button>
-                <button class="pickChance">Chance The Rapper</button>
-                <button class="pickDmx">DMX</button>
-                <button class="pickGucci">Gucci Mane</button>
-                <button class="pickDrake">Drake</button>
-                <button class="pickJon">Lil Jon</button>
-                <button class="pickNicki">Nicki Minaj</button>
-                <button class="pickBiggie">Biggie Smalls</button>
-                <button class="pickRoss">Rick Ross</button>
-                <button class="pickSoulja">Soulja Boy</button>
+                <p class="optionsPrompt text">Pick your MC! (max 4)</p>
+                <button class="pickChainz option-button">2 chainz</button>
+                <button class="pickChance option-button">Chance The Rapper</button>
+                <button class="pickDmx option-button">DMX</button>
+                <button class="pickGucci option-button">Gucci Mane</button>
+                <button class="pickDrake option-button">Drake</button>
+                <button class="pickJon option-button">Lil Jon</button>
+                <button class="pickNicki option-button">Nicki Minaj</button>
+                <button class="pickBiggie option-button">Biggie Smalls</button>
+                <button class="pickRoss option-button">Rick Ross</button>
+                <button class="pickSoulja option-button">Soulja Boy</button>
             </div>
         </div>
     </header>
@@ -45,9 +47,9 @@
         <button class="game-button soulja hidden " data-color="black"></button>
     </section>
     <footer>
-        <button class="start-button hidden">START</button>
+        <button class="start-button hidden">START!</button>
         <div class="bottomPrompts">
-            <span class="level-tally hidden"></span>
+            <span class="level-tally hidden textbox text"></span>
         </div>
     </footer>
 </main>

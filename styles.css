@@ -1,3 +1,54 @@
+html{
+    /* background-image: url(https://ae01.alicdn.com/kf/HTB1ehv9p49YBuNjy0Ffq6xIsVXa7/hip-hop-Music-collage-brick-wall-graffiti-backdrops-polyester-or-Vinyl-cloth-High-quality-Computer-print.jpg); */
+/* background-image: url(https://wallpapercave.com/wp/wp3259121.jpg); */
+background-image: url(https://i.pinimg.com/originals/b2/d3/cb/b2d3cbf00323c36e072d873f016b1d4f.jpg);
+
+
+}
+
+.title-text{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 65px;
+}
+
+.text{
+    color: white;
+    font-family: 'Bangers', cursive;
+    font-size: 35px;
+}
+
+.textBox{
+background-color: black;
+opacity: 95%;
+width: fit-content;
+margin: auto;
+border-radius: 50px;
+}
+
+.option-button{
+   font-size: 20px;
+   background-color: yellow;
+   border-radius:50px;
+   font-family: 'Bangers', cursive;
+
+}
+
+.game-button{
+    background-color: transparent;
+    border: transparent;
+   background-repeat: no-repeat;
+}
+
+.start-button{
+    margin-top: 25px;
+    font-size: 55px;
+   background-color: yellow;
+   border-radius:50px;
+   font-family: 'Bangers', cursive;
+
+}
+
 .game-container{
    text-align: center;
 }
@@ -11,17 +62,6 @@
    
 }
 
-
-.game-button{
-    background-color: transparent;
-    border: transparent;
-   background-repeat: no-repeat;
-}
-
-.start-button{
-    margin-top: 25px;
-}
-
 .hidden{
     display: none;
 }
@@ -29,9 +69,13 @@
 .disabled {
   pointer-events: none;
 }
+/* 
+.active{
 
-.activated{
-    
+} */
+
+.pickChainz{
+background-image: url();
 }
 
 .chainz{
