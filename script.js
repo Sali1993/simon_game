@@ -39,6 +39,7 @@ pickChainz.addEventListener("click", function() {
     console.log(colors)
     if(colors.length===4){
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -49,6 +50,7 @@ pickChance.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -59,6 +61,7 @@ pickDmx.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -69,6 +72,7 @@ pickGucci.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -79,6 +83,7 @@ pickDrake.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -89,6 +94,7 @@ pickJon.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -99,6 +105,7 @@ pickNicki.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -109,6 +116,7 @@ pickBiggie.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -119,6 +127,7 @@ pickRoss.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -129,6 +138,7 @@ pickSoulja.addEventListener("click", function () {
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
+        optionButtons.classList.add("hidden")
         playerInstructions.innerText="Lets get it poppin!"
     }
 })
@@ -148,7 +158,6 @@ function startGame(){
     startButton.classList.add("hidden")//hides start button and begins game promts
     // playerInstructions.classList.remove("hidden");
     playerInstructions.innerText="Wait for computer";
-    optionButtons.classList.add("hidden")
     levelTally.classList.remove("hidden")
     nextRound();
     levelTally.innerText = `Level ${level} of 25`
@@ -157,6 +166,7 @@ function startGame(){
 function randomizer() {
     const random = colors[Math.floor(Math.random() * colors.length)];
     return random;
+   
 }
 
 function gamePlay(color){
@@ -190,8 +200,10 @@ function nextRound() {
     levelTally.innerText = `Level ${level} of 25`;
     const newSequence = [...compSequence];//copies computer sequence and stores it in order to add to it
     newSequence.push(randomizer()); //adds random value to existing comuter sequence
+    console.log(newSequence)
     play(newSequence);
     compSequence = [...newSequence];
+    console.log(newSequence)
     setTimeout(() => {
         yourTurn(level);
     }, level * 500 + 1000);//delay to start your turn after the computer squence ends
@@ -211,7 +223,7 @@ function play(newSequence) {
 }
 
 function activeColor(color) {
-    const currentColor = document.querySelector(`[data-color="${color}]"`)
+    const currentColor = document.querySelector(`[data-color="${color}"]`)
     const sound = document.querySelector(`[data-sound="${color}"]`)
     currentColor.classList.add("active");
     sound.play();//.play plays sound
@@ -232,7 +244,7 @@ function reset(text){
     optionButtons.classList.remove("hidden")
     playerInstructions.innerText=""
     levelTally.classList.add("hidden")
-    // gameBoard.classList.add("hidden")
+   
    
 }
 
