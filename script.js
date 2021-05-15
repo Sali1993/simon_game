@@ -3,6 +3,16 @@ var optionButtons= document.querySelector(".optionButtons");
 var gameButtons = document.querySelectorAll(".game-button");
 var resetButton = document.querySelector("#resetButton")
 var winReset = document.querySelector("#winReset")
+var startButton = document.querySelector(".start-button");
+var playerInstructions = document.querySelector(".playerInstructions");
+var levelTally = document.querySelector(".level-tally")
+var gameBoard = document.querySelector(".button-container");
+
+//Win/Lose moduls
+var youWin = document.getElementById("winPrompt")
+var youLose = document.getElementById("losePrompt")
+
+//Player & Player option buttons
 var pickChainz= document.querySelector(".pickChainz");
 var chainzButton= document.querySelector(".chainz")
 var pickChance = document.querySelector(".pickChance");
@@ -23,13 +33,8 @@ var pickRoss = document.querySelector(".pickRoss");
 var rossButton = document.querySelector(".ross")
 var pickSoulja = document.querySelector(".pickSoulja");
 var souljaButton = document.querySelector(".soulja")
-var startButton = document.querySelector(".start-button");
-var playerInstructions = document.querySelector(".playerInstructions");
-var levelTally = document.querySelector(".level-tally")
-var gameBoard = document.querySelector(".button-container");
-var youWin = document.getElementById("winPrompt")
-var youLose = document.getElementById("losePrompt")
 
+//Empty array variable
 let colors = [];
 let compSequence =[];
 let playerSequence =[];
@@ -39,10 +44,16 @@ let level = 0;
 
 
 // Event Listeners
-
 resetButton.addEventListener("click",reset)
 winReset.addEventListener("click", reset)
+startButton.addEventListener("click", startGame);
+gameBoard.addEventListener("click", event => {
+    const { color } = event.target.dataset;
+    if (color) gamePlay(color)
+});
 
+
+//player select buttons
 pickChainz.addEventListener("click", function() {
     const sound = document.querySelector(".chainzAdlib");
     sound.play();
@@ -173,17 +184,9 @@ pickSoulja.addEventListener("click", function () {
     }
 })
 
-startButton.addEventListener("click", startGame);
-
-gameBoard.addEventListener("click", event => {
-    const { color } = event.target.dataset;
-    if (color) gamePlay(color)
-});
 
 
 //Functions
-
-
 function startGame(){
     startButton.classList.add("hidden")//hides start button and begins game promts
     // playerInstructions.classList.remove("hidden");
