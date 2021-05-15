@@ -218,8 +218,8 @@ function play(newSequence) {
     newSequence.forEach((color, index) => {
         setTimeout(() => {
             activeColor(color);
-        }, (index + 1) * 500)
-    });//for each value in sequence array delay (5 seconds * the index) between values
+        }, (index + 1) * 700)
+    });//for each value in sequence array delay (7 seconds * the index) between values
 }
 
 function activeColor(color) {
@@ -229,7 +229,7 @@ function activeColor(color) {
     sound.play();//.play plays sound
     setTimeout(() => {
         currentColor.classList.remove("active")
-    }, 300);//activates and plays sound the button for 3 seconds
+    }, 500);//activates and plays sound the button for 5 seconds
 }
 
 
