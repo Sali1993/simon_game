@@ -1,5 +1,6 @@
 //variables
-var optionButtons= document.querySelector(".optionButtons")
+var optionButtons= document.querySelector(".optionButtons");
+var gameButtons = document.querySelectorAll(".game-button");
 var pickChainz= document.querySelector(".pickChainz");
 var chainzButton= document.querySelector(".chainz")
 var pickChance = document.querySelector(".pickChance");
@@ -31,11 +32,12 @@ let pickedEmcees =[]
 let level = 0;
 
 
-//Event Listeners
+
+// Event Listeners
 
 pickChainz.addEventListener("click", function() {
-    chainzButton.classList.toggle("hidden")
-    colors.push(chainzButton.getAttribute("data-color"))
+    chainzButton.classList.remove("hidden")
+    if(colors.includes(chainzButton.getAttribute("data-color"))===false)colors.push(chainzButton.getAttribute("data-color"))
     console.log(colors)
     if(colors.length===4){
         startButton.classList.remove("hidden")
@@ -45,8 +47,8 @@ pickChainz.addEventListener("click", function() {
 })
 
 pickChance.addEventListener("click", function () {
-    chanceButton.classList.toggle("hidden")
-    colors.push(chanceButton.getAttribute("data-color"))
+    chanceButton.classList.remove("hidden")
+    if (colors.includes(chanceButton.getAttribute("data-color")) === false)colors.push(chanceButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -56,8 +58,8 @@ pickChance.addEventListener("click", function () {
 })
 
 pickDmx.addEventListener("click", function () {
-    dmxButton.classList.toggle("hidden")
-    colors.push(dmxButton.getAttribute("data-color"))
+    dmxButton.classList.remove("hidden")
+    if (colors.includes(dmxButton.getAttribute("data-color")) === false)colors.push(dmxButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -67,8 +69,8 @@ pickDmx.addEventListener("click", function () {
 })
 
 pickGucci.addEventListener("click", function () {
-    gucciButton.classList.toggle("hidden")
-    colors.push(gucciButton.getAttribute("data-color"))
+    gucciButton.classList.remove("hidden")
+    if (colors.includes(gucciButton.getAttribute("data-color")) === false)colors.push(gucciButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -78,8 +80,8 @@ pickGucci.addEventListener("click", function () {
 })
 
 pickDrake.addEventListener("click", function () {
-    drakeButton.classList.toggle("hidden")
-    colors.push(drakeButton.getAttribute("data-color"))
+    drakeButton.classList.remove("hidden")
+    if (colors.includes(drakeButton.getAttribute("data-color")) === false)colors.push(drakeButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -89,8 +91,8 @@ pickDrake.addEventListener("click", function () {
 })
 
 pickJon.addEventListener("click", function () {
-    jonButton.classList.toggle("hidden")
-    colors.push(jonButton.getAttribute("data-color"))
+    jonButton.classList.remove("hidden")
+    if (colors.includes(jonButton.getAttribute("data-color")) === false)colors.push(jonButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -100,8 +102,8 @@ pickJon.addEventListener("click", function () {
 })
 
 pickNicki.addEventListener("click", function () {
-    nickiButton.classList.toggle("hidden")
-    colors.push(nickiButton.getAttribute("data-color"))
+    nickiButton.classList.remove("hidden")
+    if (colors.includes(nickiButton.getAttribute("data-color")) === false)colors.push(nickiButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -111,8 +113,8 @@ pickNicki.addEventListener("click", function () {
 })
 
 pickBiggie.addEventListener("click", function () {
-    bigButton.classList.toggle("hidden")
-    colors.push(bigButton.getAttribute("data-color"))
+    bigButton.classList.remove("hidden")
+    if (colors.includes(bigButton.getAttribute("data-color")) === false)colors.push(bigButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -122,8 +124,8 @@ pickBiggie.addEventListener("click", function () {
 })
 
 pickRoss.addEventListener("click", function () {
-    rossButton.classList.toggle("hidden")
-    colors.push(rossButton.getAttribute("data-color"))
+    rossButton.classList.remove("hidden")
+    if (colors.includes(rossButton.getAttribute("data-color")) === false)colors.push(rossButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -133,8 +135,8 @@ pickRoss.addEventListener("click", function () {
 })
 
 pickSoulja.addEventListener("click", function () {
-    souljaButton.classList.toggle("hidden")
-    colors.push(souljaButton.getAttribute("data-color"))
+    souljaButton.classList.remove("hidden")
+    if (colors.includes(souljaButton.getAttribute("data-color")) === false)colors.push(souljaButton.getAttribute("data-color"))
     console.log(colors)
     if (colors.length === 4) {
         startButton.classList.remove("hidden")
@@ -244,7 +246,13 @@ function reset(text){
     optionButtons.classList.remove("hidden")
     playerInstructions.innerText=""
     levelTally.classList.add("hidden")
-   
+   for (let index = 0; index < gameButtons.length; index++) {
+       gameButtons[index].classList.add("hidden");
+       
+   }
    
 }
+
+
+
 
