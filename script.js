@@ -1,6 +1,8 @@
 //variables
 var optionButtons= document.querySelector(".optionButtons");
 var gameButtons = document.querySelectorAll(".game-button");
+var resetButton = document.querySelector("#resetButton")
+var winReset = document.querySelector("#winReset")
 var pickChainz= document.querySelector(".pickChainz");
 var chainzButton= document.querySelector(".chainz")
 var pickChance = document.querySelector(".pickChance");
@@ -25,6 +27,9 @@ var startButton = document.querySelector(".start-button");
 var playerInstructions = document.querySelector(".playerInstructions");
 var levelTally = document.querySelector(".level-tally")
 var gameBoard = document.querySelector(".button-container");
+var youWin = document.getElementById("winPrompt")
+var youLose = document.getElementById("losePrompt")
+
 let colors = [];
 let compSequence =[];
 let playerSequence =[];
@@ -34,6 +39,9 @@ let level = 0;
 
 
 // Event Listeners
+
+resetButton.addEventListener("click",reset)
+winReset.addEventListener("click", reset)
 
 pickChainz.addEventListener("click", function() {
     const sound = document.querySelector(".chainzAdlib");
@@ -197,13 +205,14 @@ function gamePlay(color){
     sound.play();
     const clicks = compSequence.length - playerSequence.length;
     if(playerSequence[index] !== compSequence[index]){
-        reset("Dang! Almost had it!");
+        youLose.classList.remove("hidden");
         return
     }
    
     if(playerSequence.length===compSequence.length){
-        if(playerSequence===25){
-            reset("YOU GOT IT DONE! Thats whats up!" )
+        if(playerSequence.length===25){
+            youWin.classList.remove("hidden")//winnig pop-up
+            return
         }
         playerSequence = [];
         playerInstructions.innerText="Dope! Time to step it up!";
@@ -255,8 +264,7 @@ function activeColor(color) {
 }
 
 
-function reset(text){
-    alert(text);
+function reset(){
     compSequence =[];
     playerSequence =[];
     colors=[];
@@ -264,6 +272,8 @@ function reset(text){
     level=0;
     startButton.classList.add("hidden")
     optionButtons.classList.remove("hidden")
+    youWin.classList.add("hidden")
+    youLose.classList.add("hidden")
     playerInstructions.innerText=""
     levelTally.classList.add("hidden")
    for (let index = 0; index < gameButtons.length; index++) {

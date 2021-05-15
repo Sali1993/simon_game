@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" media="screen and (max-width: 670px)" href="smallscreen.css">
+   
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,6 +73,20 @@
     <audio class="rossAdlib" src="docs/sounds/ross_1.mp3" data-sound="orange"></audio>
     <audio class="souljaAdlib" src="docs/sounds/soulja_5.mp3" data-sound="black"></audio>
 class="" 
+</div>
+
+<div id="winPrompt" class="hidden">
+    <div class="modal-content">
+        <p class="text">YOU WIN!! THAT'S WASSUP!</p>
+        <button id="winReset"class="text">play again?</button>
+    </div>
+</div>
+
+<div id="losePrompt" class="hidden">
+    <div class="modal-content">
+        <p class="text">DANG! Almost had it</p>
+        <button id="resetButton" class="text">TRY AGAIN?</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
