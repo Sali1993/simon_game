@@ -15,7 +15,7 @@ var pickJon = document.querySelector(".pickJon");
 var jonButton = document.querySelector(".jon")
 var pickNicki = document.querySelector(".pickNicki");
 var nickiButton = document.querySelector(".nicki")
-var pickBiggie = document.querySelector(".pickBiggie");
+var pickTrav = document.querySelector(".pickTrav");
 var bigButton = document.querySelector(".biggie")
 var pickRoss = document.querySelector(".pickRoss");
 var rossButton = document.querySelector(".ross")
@@ -36,6 +36,8 @@ let level = 0;
 // Event Listeners
 
 pickChainz.addEventListener("click", function() {
+    const sound = document.querySelector(".chainzAdlib");
+    sound.play();
     chainzButton.classList.remove("hidden")
     if(colors.includes(chainzButton.getAttribute("data-color"))===false)colors.push(chainzButton.getAttribute("data-color"))
     console.log(colors)
@@ -47,6 +49,8 @@ pickChainz.addEventListener("click", function() {
 })
 
 pickChance.addEventListener("click", function () {
+    const sound = document.querySelector(".chanceAdlib");
+    sound.play();
     chanceButton.classList.remove("hidden")
     if (colors.includes(chanceButton.getAttribute("data-color")) === false)colors.push(chanceButton.getAttribute("data-color"))
     console.log(colors)
@@ -58,6 +62,8 @@ pickChance.addEventListener("click", function () {
 })
 
 pickDmx.addEventListener("click", function () {
+    const sound = document.querySelector(".xAdlib");
+    sound.play();
     dmxButton.classList.remove("hidden")
     if (colors.includes(dmxButton.getAttribute("data-color")) === false)colors.push(dmxButton.getAttribute("data-color"))
     console.log(colors)
@@ -69,6 +75,8 @@ pickDmx.addEventListener("click", function () {
 })
 
 pickGucci.addEventListener("click", function () {
+    const sound = document.querySelector(".gucciAdlib");
+    sound.play();
     gucciButton.classList.remove("hidden")
     if (colors.includes(gucciButton.getAttribute("data-color")) === false)colors.push(gucciButton.getAttribute("data-color"))
     console.log(colors)
@@ -80,6 +88,8 @@ pickGucci.addEventListener("click", function () {
 })
 
 pickDrake.addEventListener("click", function () {
+    const sound = document.querySelector(".drakeAdlib");
+    sound.play();
     drakeButton.classList.remove("hidden")
     if (colors.includes(drakeButton.getAttribute("data-color")) === false)colors.push(drakeButton.getAttribute("data-color"))
     console.log(colors)
@@ -91,6 +101,8 @@ pickDrake.addEventListener("click", function () {
 })
 
 pickJon.addEventListener("click", function () {
+    const sound = document.querySelector(".jonAdlib");
+    sound.play();
     jonButton.classList.remove("hidden")
     if (colors.includes(jonButton.getAttribute("data-color")) === false)colors.push(jonButton.getAttribute("data-color"))
     console.log(colors)
@@ -102,6 +114,8 @@ pickJon.addEventListener("click", function () {
 })
 
 pickNicki.addEventListener("click", function () {
+    const sound = document.querySelector(".nickiAdlib");
+    sound.play();
     nickiButton.classList.remove("hidden")
     if (colors.includes(nickiButton.getAttribute("data-color")) === false)colors.push(nickiButton.getAttribute("data-color"))
     console.log(colors)
@@ -112,7 +126,9 @@ pickNicki.addEventListener("click", function () {
     }
 })
 
-pickBiggie.addEventListener("click", function () {
+pickTrav.addEventListener("click", function () {
+    const sound = document.querySelector(".travAdlib");
+    sound.play();
     bigButton.classList.remove("hidden")
     if (colors.includes(bigButton.getAttribute("data-color")) === false)colors.push(bigButton.getAttribute("data-color"))
     console.log(colors)
@@ -124,6 +140,8 @@ pickBiggie.addEventListener("click", function () {
 })
 
 pickRoss.addEventListener("click", function () {
+    const sound = document.querySelector(".rossAdlib");
+    sound.play();
     rossButton.classList.remove("hidden")
     if (colors.includes(rossButton.getAttribute("data-color")) === false)colors.push(rossButton.getAttribute("data-color"))
     console.log(colors)
@@ -135,6 +153,8 @@ pickRoss.addEventListener("click", function () {
 })
 
 pickSoulja.addEventListener("click", function () {
+    const sound = document.querySelector(".souljaAdlib");
+    sound.play();
     souljaButton.classList.remove("hidden")
     if (colors.includes(souljaButton.getAttribute("data-color")) === false)colors.push(souljaButton.getAttribute("data-color"))
     console.log(colors)
